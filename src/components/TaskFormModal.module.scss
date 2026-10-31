@@ -1,0 +1,69 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: v.$color-overlay;
+  @include m.flex-center;
+  z-index: 1000;
+}
+
+.form {
+  background: #fff;
+  padding: v.$spacing-xl;
+  border-radius: v.$radius-md;
+  min-width: 360px;
+}
+
+.field {
+  margin-bottom: v.$spacing-sm;
+}
+
+.label {
+  display: block;
+  margin-bottom: v.$spacing-xs;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: v.$radius-sm;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.actions {
+  margin-top: v.$spacing-lg;
+  display: flex;
+  gap: v.$spacing-sm;
+}
+
+.button {
+  padding: v.$spacing-sm v.$spacing-md;
+  border-radius: v.$radius-sm;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fff;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.primaryButton {
+  @extend .button;
+  background: v.$color-primary;
+  color: white;
+  border-color: v.$color-primary;
+
+  &:hover {
+    background: v.$color-primary-hover;
+  }
+}

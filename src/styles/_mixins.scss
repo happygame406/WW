@@ -1,0 +1,62 @@
+@use 'variables' as v;
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin icon-button {
+    background: transparent;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-sm;
+    cursor: pointer;
+    padding: 6px 8px;
+    display: inline-flex;
+    align-items: center;
+    transition: background .15s, border-color .15s, transform .1s;
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+        background: v.$color-bg-hover;
+        border-color: v.$color-primary;
+    }
+    &:active:not(:disabled) {
+        transform: translateY(1px);
+    }
+}
+
+@mixin card-shadow {
+    box-shadow: v.$shadow-card;
+}
+
+@mixin dashed-button {
+    padding: v.$spacing-sm v.$spacing-md;
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+    white-space: nowrap;
+    background: v.$color-bg-card;
+    color: v.$color-text-muted;
+    border: 2px dashed v.$color-border;
+    border-radius: v.$radius-md;
+    cursor: pointer;
+    font-weight: 500;
+    transition: border-color .15s, color .15s, background .15s;
+
+    &:hover {
+        background: v.$color-bg-hover;
+        border-color: v.$color-primary;
+        color: v.$color-text;
+    }
+}

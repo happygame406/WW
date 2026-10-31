@@ -1,0 +1,9 @@
+@use './styles/variables' as v;
+
+.header {
+    padding: v.$spacing-lg v.$spacing-xl;
+    border-bottom: 1px solid v.$color-border-light;
+}
+.title {
+    margin: 0;
+}

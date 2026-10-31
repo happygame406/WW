@@ -1,0 +1,13 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.board {
+  display: flex;
+  gap: v.$spacing-lg;
+  padding: v.$spacing-xl;
+  align-items: flex-start;
+}
+
+.addColumnButton {
+  @include m.dashed-button;
+}

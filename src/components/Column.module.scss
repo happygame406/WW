@@ -1,0 +1,40 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.column {
+  background: v.$color-bg-column;
+  border-radius: v.$radius-md;
+  padding: v.$spacing-sm;
+  width: v.$column-width;
+  min-height: v.$column-min-height;
+}
+
+.columnDragging {
+  opacity: 0.5;
+}
+
+.columnHeader {
+  @include m.flex-between;
+  margin-bottom: v.$spacing-md;
+}
+
+.columnTitle {
+  margin: 0;
+}
+
+.columnActions {
+  display: flex;
+  gap: v.$spacing-xs;
+}
+
+.actionButton {
+  @include m.icon-button
+}
+
+.emptyMessage {
+  color: v.$color-text-light;
+  font-style: italic;
+  text-align: center;
+  padding: v.$spacing-lg 0px;
+  margin: 0;
+}

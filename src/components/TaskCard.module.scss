@@ -1,0 +1,50 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.taskCard {
+  background: v.$color-bg-card;
+  border-radius: v.$radius-sm;
+  padding: v.$spacing-sm;
+  margin-bottom: v.$spacing-sm;
+  box-shadow: v.$shadow-card;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+.taskHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$spacing-sm;
+}
+
+.dragIcon {
+  color: v.$color-text-light;
+  cursor: grab;
+  flex-shrink: 0;
+  margin-top: v.$spacing-xs;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.taskTitle {
+  margin: 0 0 v.$spacing-xs;
+}
+
+.taskDescription {
+  margin: 0;
+  font-size: 0.9em;
+  color: v.$color-text-muted;
+}
+
+.taskActions {
+  margin-top: v.$spacing-sm;
+  display: flex;
+  gap: v.$spacing-xs;
+  align-items: center;
+}
+
+.actionButton {
+  @include m.icon-button
+}
